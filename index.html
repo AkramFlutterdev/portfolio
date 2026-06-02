@@ -399,6 +399,7 @@
       display: inline-flex; align-items: center; gap: .5rem;
     }
     .btn-cv:hover { background: var(--accent); color: #0c0c0e; transform: translateY(-2px); }
+   
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; flex-direction: column; gap: 1.5rem; position: absolute; top: 64px; left: 0; right: 0; background: var(--surface); padding: 2rem; border-bottom: 1px solid var(--border); }
@@ -454,6 +455,141 @@
     @media (max-width: 480px) {
       .edu-card { grid-template-columns: 1fr; gap: 1rem; }
     }
+
+    /* */
+    /* ─── EDUCATION ROADMAP ───────────────────────────────────── */
+#education {
+  background: var(--bg);
+  position: relative;
+}
+
+.edu-roadmap {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Main path */
+.edu-roadmap::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--accent),
+    var(--accent2)
+  );
+  transform: translateX(-50%);
+}
+
+/* Step */
+.edu-step {
+  position: relative;
+  width: 50%;
+  padding: 0 3rem;
+  margin-bottom: 4rem;
+}
+
+.edu-step:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.edu-step:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+/* Dot */
+.edu-step::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  width: 18px;
+  height: 18px;
+  background: var(--accent);
+  border: 4px solid var(--bg);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(200,169,110,.15);
+  z-index: 2;
+}
+
+.edu-step:nth-child(odd)::before {
+  right: -9px;
+}
+
+.edu-step:nth-child(even)::before {
+  left: -9px;
+}
+
+/* Card */
+.edu-content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.5rem;
+  transition: all .3s ease;
+}
+
+.edu-content:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.edu-year {
+  display: inline-block;
+  color: var(--accent);
+  font-family: var(--ff-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: .7rem;
+}
+
+.edu-degree {
+  color: var(--accent2);
+  font-size: .9rem;
+  margin-bottom: .5rem;
+}
+
+.edu-content h3 {
+  font-family: var(--ff-head);
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
+}
+
+.edu-school {
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .edu-roadmap::before {
+    left: 18px;
+  }
+
+  .edu-step,
+  .edu-step:nth-child(odd),
+  .edu-step:nth-child(even) {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding-left: 3.5rem;
+    padding-right: 0;
+  }
+
+  .edu-step::before,
+  .edu-step:nth-child(odd)::before,
+  .edu-step:nth-child(even)::before {
+    left: 10px;
+    right: auto;
+  }
+}
   </style>
 </head>
 <body>
@@ -601,6 +737,8 @@
   </section>
 
   <!-- ── EDUCATION ────────────────────────────────────────────── -->
+ 
+    <!-- >
   <section id="education">
     <div class="container">
       <div class="section-header">
@@ -649,6 +787,58 @@
       </div>
     </div>
   </section>
+
+-->
+
+<div class="edu-roadmap">
+
+  <div class="edu-step">
+    <div class="edu-content">
+      <div class="edu-year">2022</div>
+      <h3>University Diploma of Technology — Computer Science</h3>
+      <p class="edu-degree">DUT, Computer Science</p>
+      <p class="edu-school">
+        📍 ESTM · Meknès, Morocco
+      </p>
+    </div>
+  </div>
+
+  <div class="edu-step">
+    <div class="edu-content">
+      <div class="edu-year">2023</div>
+      <h3>Bachelor of Science — AI & Data Science</h3>
+      <p class="edu-degree">BSc, Artificial Intelligence & Data Science</p>
+      <p class="edu-school">
+        📍 ESTM · Meknès, Morocco
+      </p>
+    </div>
+  </div>
+
+  <div class="edu-step">
+    <div class="edu-content">
+      <div class="edu-year">ALX</div>
+      <h3>Software Engineering Program</h3>
+      <p class="edu-degree">Certification</p>
+      <p class="edu-school">
+        📍 Holberton School · ALX Africa
+      </p>
+    </div>
+  </div>
+
+  <div class="edu-step">
+    <div class="edu-content">
+      <div class="edu-year">AiCE</div>
+      <h3>Artificial Intelligence Program</h3>
+      <p class="edu-degree">Certification</p>
+      <p class="edu-school">
+        📍 Holberton School · AiCE
+      </p>
+    </div>
+  </div>
+
+</div>
+
+
 
   <!-- ── CONTACT ──────────────────────────────────────────────── -->
   <section id="contact">
